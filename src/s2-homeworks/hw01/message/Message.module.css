@@ -22,7 +22,7 @@
   flex-flow: column;
   margin-right: 12px;
   padding: 13px 8px;
-  font: 400 1rem/1.2rem Montserrat, sans-serif;
+  font-weight: 400;
   text-align: right;
   color: #ffffff;
   background-color: #0066cc;

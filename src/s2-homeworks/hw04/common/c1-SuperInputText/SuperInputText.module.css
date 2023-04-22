@@ -1,36 +1,36 @@
 .input:focus {
-	border-color: #719ece;
-  box-shadow: 0 0 10px #719ece;
+  border-color: var(--cl-blue-light);
+  box-shadow: 0 0 10px var(--cl-blue-light);
 }
 
 .input {
-	width: 100%;
-	min-height: 36px;
-	padding: 8px 12px;
-	color: #000000;
-  border: 1px solid #d1d1d1;
-	border-radius: 5px;
-	outline: none;
-	transition: 0.15s ease-in-out;
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 12px;
+  color: var(--cl-black);
+  border: 1px solid var(--cl-grey-light);
+  border-radius: 5px;
+  outline: none;
+  transition: 0.15s ease-in-out;
 }
 
 .inputWrapper {
 }
 
 .superInput {
-	border: 1px solid #d1d1d1;
+  border: 1px solid var(--cl-grey-light);
 }
 
 .errorInput {
-	border-color: #ce9671;
+  border-color: var(--cl-orange-light);
 }
 
 .errorInput:focus {
-	border-color: #ce9671;
-	box-shadow: 0 0 10px #ce9671;
+  border-color: var(--cl-orange-light);
+  box-shadow: 0 0 10px var(--cl-orange-light);
 }
 
 .error {
-	padding: 12px 0;
-  color: #cc0000;
+  padding: 12px 0;
+  color: var(--cl-orange-red);
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessagePropsType } from '../message/Message';
 import s from './FriendMessage.module.css';
 

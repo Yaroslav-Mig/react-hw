@@ -5,7 +5,7 @@
   z-index: 1;
   height: 100%;
   width: 317px;
-  background-color: #ffffff;
+  background-color: var(--cl-white);
   overflow: hidden;
 }
 
@@ -33,12 +33,14 @@
   min-height: 250px;
   padding: 1.2rem 4.4rem;
   overflow: hidden;
+	user-select: none;
 }
+
 .nav a {
   position: relative;
   padding-bottom: 5px;
   font: 600 1.375rem/1.68rem Montserrat, sans-serif;
-  color: #000000;
+  color: var(--cl-black);
   text-decoration: none;
   cursor: pointer;
   opacity: 0;
@@ -67,7 +69,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #0066cc;
+  background-color: var(--cl-default);
   transition: all 0.7s ease-in-out;
 }
 
@@ -76,14 +78,14 @@
 }
 
 nav a.active {
-  color: #0066cc;
+  color: var(--cl-default);
 }
 
 .close {
   position: absolute;
   top: 22px;
   right: 30px;
-  color: #000000;
+  color: var(--cl-black);
   background-color: transparent;
   border: none;
   cursor: pointer;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Affairs from './affairs/Affairs';
 import s2 from '../../s1-main/App.module.css';
 

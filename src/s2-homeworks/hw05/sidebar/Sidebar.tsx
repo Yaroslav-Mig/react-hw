@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './Sidebar.module.css';
 import { PATH } from '../Pages';
@@ -11,8 +11,8 @@ type PropsType = {
 
 export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
 
-  const sidebarClass: string = open ? `${s.sidebar} ${s.open}` : s.sidebar;
-  const navClass: string = open ? `${s.nav} ${s.nav_active}` : s.nav;
+  const classSidebar: string = open ? `${s.sidebar} ${s.open}` : s.sidebar;
+  const classNavBox: string = open ? `${s.nav} ${s.nav_active}` : s.nav;
 
   const setActiveLink = ({ isActive }: { isActive: boolean }): string | undefined => {
     return isActive ? s.active : '';
@@ -22,12 +22,12 @@ export const Sidebar: FC<PropsType> = ({ open, handleClose }) => {
     <>
       {open && <div className={s.background} onClick={handleClose} />}
 
-      <aside className={sidebarClass}>
+      <aside className={classSidebar}>
         <button className={s.close} onClick={handleClose}>
           <img src={closeIcon} alt='close sidebar' id={'hw5-menu-close'} />
         </button>
 
-        <nav id={'hw5-menu'} className={navClass}>
+        <nav id={'hw5-menu'} className={classNavBox}>
           <NavLink
             id={'hw5-pre-junior-link'}
             to={PATH.PRE_JUNIOR}

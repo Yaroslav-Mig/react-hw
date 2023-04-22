@@ -1,4 +1,3 @@
-import React from 'react';
 import s2 from '../../s1-main/App.module.css';
 import Stand from './Stand';
 

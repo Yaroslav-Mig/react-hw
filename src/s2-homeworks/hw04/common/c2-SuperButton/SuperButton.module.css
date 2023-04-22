@@ -3,7 +3,7 @@
   width: 100%;
   padding: 5px 24px;
   font: 600 0.875rem/1.25rem Montserrat, sans-serif;
-  color: #ffffff;
+  color: var(--cl-white);
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -11,17 +11,17 @@
 }
 
 .default {
-  background-color: #0066cc;
+  background-color: var(--cl-default);
 }
 
 .red {
-  background-color: #cc1439;
+  background-color: var(--cl-primary);
 }
 
 .secondary {
-  color: #0066cc;
-  background-color: #ffffff;
-  border: 1px #0066cc solid;
+  color: var(--cl-default);
+  background-color: var(--cl-secondary);
+  border: 1px var(--cl-default) solid;
 }
 
 .disabled {
@@ -30,30 +30,31 @@
 }
 
 .default:hover {
-  background-color: #0080ff;
+  background-color: var(--cl-default-hover);
 }
 
 .red:hover {
-  background-color: #ff1a47;
+  background-color: var(--cl-primary-hover);
 }
 
 .secondary:hover {
-  background-color: #e5f0fa;
+  background-color: var(--cl-secondary-hover);
 }
 
 .default:active {
-	background-color: #0059B3;
+  background-color: var(--cl-default-active);
 }
 
 .secondary:active {
-	background-color: #C9E5FF;
+  background-color: var(--cl-secondary-active);
 }
 
 .red:active {
-	background-color: #B31232;
+  background-color: var(--cl-primary-active);
 }
 
 .button:disabled {
-	color: #002e5c;
-  background-color: rgb(0, 77, 153, 0.5);
+  color: var(--cl-black);
+  background-color: var(--cl-blue-steel-dim);
+  cursor: not-allowed;
 }

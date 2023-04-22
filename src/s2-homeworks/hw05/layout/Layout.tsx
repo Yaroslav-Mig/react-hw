@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 import { Header } from '../header/Header';
 import { Sidebar } from '../sidebar/Sidebar';
 import s from '../../../s1-main/App.module.css';
@@ -24,12 +24,12 @@ export const Layout: FC<PropsType> = ({ children }) => {
   }, [open]);
   // отключает прокрутку при открытом меню
 
-  const toggleClass = open ? `${s.layout_wrapper} ${s.sidebar_open}` : s.layout_wrapper;
+  const classContent = open ? `${s.layout_wrapper} ${s.sidebar_open}` : s.layout_wrapper;
 
   return (
     <>
       <Sidebar open={open} handleClose={handleClose} />
-      <div className={toggleClass}>
+      <div className={classContent}>
         <Header handleOpen={handleOpen} />
         <main className={s.pages_box}>{children}</main>
       </div>

@@ -3,7 +3,7 @@
   flex-flow: column;
   align-items: flex-start;
   font: 400 0.875rem/1.1rem Montserrat, sans-serif;
-	max-width: 465px;
+  max-width: 465px;
   width: 100%;
 }
 
@@ -12,32 +12,32 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
-	width: 100%;
+  width: 100%;
 }
 
 .input_box {
-	flex: 0 1 375px;
+  flex: 0 1 375px;
 }
 
 .input {
-	width: 100%;
-	min-height: 36px;
+  width: 100%;
+  min-height: 36px;
   padding: 8px 12px;
-  color: #000000;
-  border: 1px solid #d1d1d1;
+  color: var(--cl-black);
+  border: 1px solid var(--cl-grey-light);
   border-radius: 5px;
   outline: none;
   transition: 0.15s ease-in-out;
 }
 
 .input:focus {
-  border-color: #719ece;
-  box-shadow: 0 0 10px #719ece;
+  border-color: var(--cl-blue-light);
+  box-shadow: 0 0 10px var(--cl-blue-light);
 }
 
 .errorInput {
-  border-color: #ce9671;
-  box-shadow: 0 0 10px #ce9671;
+  border-color: var(--cl-orange-light);
+  box-shadow: 0 0 10px var(--cl-orange-light);
 }
 
 .button {
@@ -45,45 +45,43 @@
   padding: 5px 24px;
   min-height: 36px;
   font: 600 0.875rem/1.25rem Montserrat, sans-serif;
-  color: #ffffff;
-  background: #0066cc;
+  color: var(--cl-white);
+  background: var(--cl-default);
   border-radius: 3px;
   border: none;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 0 40px 40px #0066cc inset, 0 0 0 0 #0066cc;
+  box-shadow: 0 0 40px 40px var(--cl-default) inset, 0 0 0 0 var(--cl-default);
   transition: 0.15s ease-in-out;
 }
 .button:disabled {
   cursor: default;
-  background-color: rgba(144, 144, 144, 0.8);
+  background-color: hsla(0, 0%, 56%, 0.8);
   box-shadow: none;
 }
 .button:focus {
-  outline: thick double #99d3f8;
+  outline: thick double var(--cl-blue-sky-light);
 }
 .button:enabled:hover {
-  color: #0066cc;
-  outline: thick double #99d3f8;
-  box-shadow: 0 0 10px 36px #ffffff inset, 0 0 10px 4px #719ece;
+  outline: thick double var(--cl-blue-sky-light);
+  box-shadow: 0 0 10px 36px var(--cl-default) inset, 0 0 10px 4px var(--cl-blue-light);
 }
 .button:enabled:active {
-  color: #ffffff;
-  background: #0066cc;
+  background: var(--cl-default);
   outline: none;
-  box-shadow: 0 0 40px 40px #0066cc inset, 0 0 0 0 #0066cc;
+  box-shadow: 0 0 40px 40px var(--cl-default) inset, 0 0 0 0 var(--cl-default);
 }
 
 .text,
 .greeting {
   padding-bottom: 9px;
-  color: #646464;
+  color: var(--cl-grey-dim);
 }
 .greeting {
-  color: #000000;
+  color: var(--cl-black);
 }
 
 .error {
   padding: 7px 0;
-  color: #cc0000;
+  color: var(--cl-orange-red);
 }

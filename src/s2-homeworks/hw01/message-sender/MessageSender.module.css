@@ -10,7 +10,7 @@
   padding: 12px 24px;
   font: 400 1rem/1rem Montserrat, sans-serif;
   color: rgba(0, 0, 0, 0.6);
-  background-color: #f5f7fb;
+  background-color: var(--cl-lavender);
   border: none;
   border-radius: 20px;
   outline: none;
@@ -19,30 +19,30 @@
 }
 
 .textarea:focus {
-  border-color: #719ece;
-  box-shadow: 0 0 10px #719ece;
+  border-color: var(--cl-blue-light);
+  box-shadow: 0 0 10px var(--cl-blue-light);
 }
 
 .button {
   flex: 0 1 120px;
   height: 40px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--cl-white);
   text-align: center;
-  background-color: #0066cc;
+  background-color: var(--cl-default);
   border: none;
-	outline: none;
+  outline: none;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 0 40px 40px #0066cc inset, 0 0 0 0 #0066cc;
+  box-shadow: 0 0 40px 40px var(--cl-default) inset, 0 0 0 0 var(--cl-default);
   transition: 0.2s ease-in-out;
 }
-.button:focus,
+
 .button:hover {
-  color: #0066cc;
-  box-shadow: 0 0 10px 40px #ffffff inset, 0 0 10px 4px #719ece;
+  color: var(--cl-default);
+  box-shadow: 0 0 10px 40px var(--cl-white) inset, 0 0 10px 4px var(--cl-blue-light);
 }
 .button:active {
-	color: #ffffff;
-	box-shadow: 0 0 40px 40px #0066cc inset, 0 0 0 0 #0066cc;
+  color: var(--cl-white);
+  box-shadow: 0 0 40px 40px var(--cl-default) inset, 0 0 0 0 var(--cl-default);
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import Affair from './affair/Affair';
 import { AffairType, FilterType } from '../HW2';
 import s from './Affairs.module.css';

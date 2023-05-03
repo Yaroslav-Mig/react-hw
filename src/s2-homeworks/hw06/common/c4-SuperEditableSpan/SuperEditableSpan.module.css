@@ -1,11 +1,26 @@
 .spanBlock {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  min-height: 31.5px;
 }
 
 .span {
+  color: var(--cl-default-hover);
+  line-height: 20px;
+	cursor: pointer;
+}
+
+.span::first-letter {
+  text-transform: capitalize;
 }
 
 .input {
+  color: var(--cl-black);
 }
 
 .pen {
+  line-height: 20px;
 }

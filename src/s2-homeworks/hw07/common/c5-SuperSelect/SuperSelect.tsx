@@ -1,55 +1,71 @@
 import React, {
-    SelectHTMLAttributes,
-    DetailedHTMLProps,
-    ChangeEvent,
-} from 'react'
-import s from './SuperSelect.module.css'
+  SelectHTMLAttributes,
+  DetailedHTMLProps,
+  ChangeEvent,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import s from './SuperSelect.module.css';
+import { CoordinateType } from '../../HW7';
 
 type DefaultSelectPropsType = DetailedHTMLProps<
-    SelectHTMLAttributes<HTMLSelectElement>,
-    HTMLSelectElement
->
+  SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement
+>;
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
-}
+  options?: CoordinateType[];
+  onChangeOption?: (option: string) => void;
+};
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
-    options,
-    className,
-    onChange,
-    onChangeOption,
-    ...restProps
+  options,
+  className,
+  onChange,
+  onChangeOption,
+  ...restProps
 }) => {
-    const mappedOptions: any[] = options
-        ? options.map((o) => (
-              <option
-                  id={'hw7-option-' + o.id}
-                  className={s.option}
-                  key={o.id}
-                  value={o.id}
-              >
-                  {o.value}
-              </option>
-          ))
-        : [] // map options with key
+  const [toggle, setToggle] = useState<boolean>(false);
+  const selectRef = useRef<HTMLSelectElement>(null);
 
-    const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        // делают студенты
+  useEffect(() => {
+    const selectEl = selectRef.current as HTMLSelectElement;
+    if (!toggle) {
+      selectEl.blur();
     }
+  }, [toggle]);
 
-    const finalSelectClassName = s.select + (className ? ' ' + className : '')
+  const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>): void => {
+    onChangeOption?.(e.target.value);
+  };
 
-    return (
-        <select
-            className={finalSelectClassName}
-            onChange={onChangeCallback}
-            {...restProps}
-        >
-            {mappedOptions}
-        </select>
-    )
-}
+  const onClickHandler = (): void => setToggle((prev) => !prev);
 
-export default SuperSelect
+  const mappedOptions: JSX.Element[] = options
+    ? options.map((o) => (
+        <option key={o.id} id={'hw7-option-' + o.id} className={s.option} value={o.value}>
+          {o.value}
+        </option>
+      ))
+    : [];
+
+  const finalSelectClassName = s.select + (className ? ' ' + className : '');
+
+  return (
+    <form className={s.wrapper}>
+      <select
+        name='coordinate'
+        ref={selectRef}
+        className={finalSelectClassName}
+        onChange={onChangeCallback}
+        onClick={onClickHandler}
+        {...restProps}
+      >
+        {mappedOptions}
+      </select>
+    </form>
+  );
+};
+
+export default SuperSelect;

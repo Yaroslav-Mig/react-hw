@@ -1,9 +1,45 @@
+.wrapper {
+  position: relative;
+  width: 100px;
+  padding: 1px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
 .select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 2px 0 5px 10px;
+  background-color: inherit;
+  outline: none;
+  overflow: hidden;
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  z-index: -1;
+  background: var(--cl-gainsboro) no-repeat right top 50%/20% url(chevron-down.svg);
+}
+
+.wrapper:focus-within::before {
+  transform: rotateX(160deg);
 }
 
 .select:focus {
+  outline: thin ridge var(--cl-grey);
 }
 
+.option {
+  background-color: var(--cl-gainsboro);
+}
 
-.option:hover {
+.option:checked {
+  background-color: var(--cl-blue-sky-light);
 }

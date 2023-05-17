@@ -16,7 +16,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
   options?: CoordinateType[];
-  onChangeOption?: (option: string) => void;
+  onChangeOption?: (option: number) => void;
 };
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
@@ -37,14 +37,14 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
   }, [toggle]);
 
   const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>): void => {
-    onChangeOption?.(e.target.value);
+    onChangeOption?.(Number(e.target.value));
   };
 
   const onClickHandler = (): void => setToggle((prev) => !prev);
 
   const mappedOptions: JSX.Element[] = options
     ? options.map((o) => (
-        <option key={o.id} id={'hw7-option-' + o.id} className={s.option} value={o.value}>
+        <option key={o.id} id={'hw7-option-' + o.id} className={s.option} value={o.id}>
           {o.value}
         </option>
       ))

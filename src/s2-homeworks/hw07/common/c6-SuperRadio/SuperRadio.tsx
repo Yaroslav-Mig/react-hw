@@ -11,7 +11,7 @@ type DefaultSpanPropsType = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, H
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
   options?: CoordinateType[];
-  onChangeOption?: (option: string) => void;
+  onChangeOption?: (option: number) => void;
   spanProps?: DefaultSpanPropsType;
 };
 
@@ -27,7 +27,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   ...restProps
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    onChangeOption?.(e.target.value);
+    onChangeOption?.(Number(e.target.value));
   };
 
   const finalRadioClassName = s.radio + (className ? ' ' + className : '');
@@ -41,8 +41,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
             className={finalRadioClassName}
             type='radio'
             name='coordinate'
-            value={o.value}
-            checked={o.value === value}
+            value={o.id}
+            checked={o.id === value}
             onChange={onChangeCallback}
             {...restProps}
           />

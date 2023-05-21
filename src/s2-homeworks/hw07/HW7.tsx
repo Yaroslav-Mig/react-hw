@@ -17,7 +17,6 @@ const arr: CoordinateType[] = [
 
 const HW7 = () => {
   const [value, onChangeOption] = useState(1);
-  // const [value, onChangeOption] = useState<string>(arr[0].value as string);
 
   return (
     <div id={'hw7'}>

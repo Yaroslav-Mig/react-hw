@@ -1,23 +1,40 @@
-.item {
-}
-
-.item:last-of-type {
-}
-
-.users {
+.container {
+  max-width: 606px;
+  width: 100%;
 }
 
 .buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
-.container {
+.users {
+  width: 100%;
+  border-collapse: collapse;
+  font: 300 0.875rem/1.15 Roboto, sans-serif;
 }
 
 .thead {
+  font-weight: 600;
+  background-color: var(--cl-gainsboro);
+}
+
+.item {
+  border-bottom: 1px solid var(--cl-gainsboro);
+}
+
+.item:last-of-type {
+  border-bottom: none;
 }
 
 .nameCol {
+  width: 42%;
+  padding: 11px 17px 9px;
 }
 
 .ageCol {
+  width: 57%;
+  padding: 16px 17px;
 }
